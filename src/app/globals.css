@@ -1,26 +1,107 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    h1 { @apply text-4xl font-bold text-[#364153] dark:text-[#d1d5dc] }
+    h2 { @apply text-3xl font-bold text-[#364153] dark:text-[#d1d5dc] }
+    h3 { @apply text-2xl font-bold text-[#364153] dark:text-[#d1d5dc] }
+    h4 { @apply text-xl font-medium text-[#364153] dark:text-[#d1d5dc] }
+
+    p { @apply text-lg text-[#364153] dark:text-[#d1d5dc] }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Font styles */
+.montserrat-alternates {
+    font-family: var(--font-montserrat-alternates), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Main Text Colors */
+.text-main {
+    @apply text-[#364153] dark:text-[#d1d5dc]
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Colors */
+.text-main-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600
+}
+
+.bg-main-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600
+}
+
+/* BG Colors */
+.bg-btn-primary {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 active:bg-gradient-to-r active:from-indigo-800 active:to-purple-800 hover:bg-gradient-to-r hover:from-indigo-800 hover:to-purple-800
+}
+
+/* Header BG Colors */
+.bg-header {
+    @apply bg-gray-50/40 dark:bg-[#0A1124]/50
+}
+
+/* Gradient Colors */
+
+/* BLUE */
+.text-grad-blue {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600
+}
+
+.bg-grad-blue {
+    @apply bg-gradient-to-r from-sky-400 to-blue-600
+}
+
+.active-bg-grad-blue {
+    @apply active:bg-gradient-to-r active:from-sky-600 active:to-blue-800
+}
+/* --------------------------------------------------------------------------- */
+
+/* PINK */
+.bg-grad-pink {
+    @apply bg-gradient-to-r from-pink-400 to-fuchsia-500
+}
+/* --------------------------------------------------------------------------- */
+
+.hero {
+    background-image: radial-gradient(circle, #6f5f8c45 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.hero-animation {
+    animation: heroAnimation 1s ease forwards;
+}
+
+.hero-animation-delay-1 {
+    animation: heroAnimation 1.2s ease forwards;
+}
+
+.hero-animation-delay-btn1 {
+    animation: heroAnimation 1.4s ease forwards;
+}
+
+.hero-animation-delay-btn2 {
+    animation: heroAnimation 1.7s ease forwards;
+}
+
+.hero-animation-delay-badge1 {
+    animation: heroAnimation 1s ease forwards;
+}
+
+.hero-animation-delay-badge2 {
+    animation: heroAnimation 1.5s ease forwards;
+}
+
+.hero-animation-delay-badge3 {
+    animation: heroAnimation 2s ease forwards;
+}
+
+@keyframes heroAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-1px);
+    }
 }
