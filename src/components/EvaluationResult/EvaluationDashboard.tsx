@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import PdfPreview from "@/components/toImg";
 import {
     ChevronDown,
     ChevronUp,
@@ -27,7 +27,7 @@ export interface IResultObject {
 
 interface EvaluationDashboardProps {
     result: IResultObject;
-    resumeImageUrl: string;
+    pdfUrl: string;
     duration: number;
 }
 
@@ -197,7 +197,7 @@ const SectionItem = ({
 
 export default function EvaluationDashboard({
     result,
-    resumeImageUrl,
+    pdfUrl,
 }: EvaluationDashboardProps) {
     const [openSections, setOpenSections] = useState<Record<string, boolean>>(
         {},
@@ -232,15 +232,12 @@ export default function EvaluationDashboard({
 
                 <div className="grid lg:grid-cols-2 gap-8 items-start">
                     {/* Left Column: Resume Image */}
-                    <div className="bg-white/40 p-4 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-100/50 flex justify-center items-start min-h-[600px]">
+                    <div className="bg-white/40 p-4 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-100/50 flex justify-center items-start min-h-[300px] md:min-h-[600px]">
                         {/* Mocking a document viewer look */}
                         <div className="w-full h-full relative group">
-                            {resumeImageUrl ? (
-                                <Image
-                                    src={resumeImageUrl}
-                                    alt="Resume Preview"
-                                    width={800}
-                                    height={800}
+                            {pdfUrl ? (
+                                <PdfPreview
+                                    pdfUrl={pdfUrl}
                                     className="w-full h-auto rounded shadow-sm object-contain"
                                 />
                             ) : (
