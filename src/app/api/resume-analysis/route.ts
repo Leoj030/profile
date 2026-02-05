@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "Incorrect file type" }, { status: 400 });
         }
         
-        const pdfId = await uploadFile(file, "ResumePDF", filename, file.type);
+        await uploadFile(file, "ResumePDF", filename, file.type);
 
         const finalResult = {
             content: analysisResult.content,
