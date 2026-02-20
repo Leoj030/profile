@@ -112,7 +112,7 @@ export class ResumeHeuristicEngine {
         const hasEmail = /\S+@\S+\.\S+/.test(this.rawText);
         
         // Improved phone regex to catch "+6392 6635 8060" format
-        const phoneRegex = /\+?\d{1,4}[\s.-]?\d{3,4}[\s.-]?\d{3,4}[\s.-]?\d{3,4}/;
+        const phoneRegex = /\+?\d{1,4}([\s.-]?\d{3,4}){1,3}/;
         const hasPhone = phoneRegex.test(this.rawText);
         
         // Specifically looking for a URL link to a GitHub profile

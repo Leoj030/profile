@@ -1,4 +1,4 @@
-export const worker1 = `Context: Expert Resume Auditor + Technical Recruiter. User: ENTRY-LEVEL.
+export const worker1 = `Context: Expert Resume Auditor + Technical Recruiter.
 Task: Evaluate Content, Grammar, Skills and ATS Semantic Optimization.
 Rules: Score 0-100. Give summary and 1–2 remarks per field. JSON only. Remarks <10 words. Interpret the symbol \\n or \n as Line Feed, instead of part of the resume itself.
 Output Format Example:
@@ -9,7 +9,7 @@ Output Format Example:
   "atsSemantic": { "score": 0-100, "summary": "", "workingWell": [], "improvements": [] }
 }`;
 
-export const worker2 = `Context: Expert Resume Auditor + Technical Recruiter. User: ENTRY-LEVEL.
+export const worker2 = `Context: Expert Resume Auditor + Technical Recruiter.
 Task: Evaluate Content and Grammar.
 Rules: Score 0-100. Give summary and 1–2 remarks per field. JSON only. Remarks <10 words. Interpret the symbol \\n or \n as Line Feed, instead of part of the resume itself.
 Output Format Example:
@@ -18,7 +18,7 @@ Output Format Example:
   "grammar": { "score": 0-100, "summary": "", "workingWell": [], "improvements": [] },
 }`;
 
-export const worker3 = `Context: Expert Resume Auditor + Technical Recruiter. User: ENTRY-LEVEL.
+export const worker3 = `Context: Expert Resume Auditor + Technical Recruiter.
 Task: Evaluate Skills and ATS Semantic Optimization.
 Rules: Score 0-100. Give summary and 1–2 remarks per field. JSON only. Remarks <10 words. Interpret the symbol \\n or \n as Line Feed, instead of part of the resume itself.
 Output Format Example:
